@@ -10,8 +10,8 @@ void setup() {
 
 unsigned long currentTime;
 unsigned long lastTime;
-int interval = 2000;
-long sum = 0.0;
+int interval = 250;
+long sum = 9998;
 void loop() {
     currentTime = millis();
     if(currentTime - lastTime > interval) {
@@ -23,5 +23,8 @@ void loop() {
        sevseg.refreshDisplay();
        sevseg.setNumber(sum);
        sevseg.refreshDisplay();
+    }
+    if(sum >= 10000) {
+      sum = 0;
     }
 }
